@@ -14,7 +14,7 @@ function transform(sobject) {
 
 let pool = mysql.createPool(process.env.CLEARDB_DATABASE_URL || 'mysql://root@localhost/demo');
 
-// create the table if it doesn't exist
+// create the table if it doesn't exist hello
 pool.query(`SELECT * FROM ${tableName}`, function(err) {
   if ((err != null) && (err.code == 'ER_NO_SUCH_TABLE')) {
     pool.query('create table contact (id VARCHAR(18) PRIMARY KEY, name VARCHAR(128), email VARCHAR(128))');
